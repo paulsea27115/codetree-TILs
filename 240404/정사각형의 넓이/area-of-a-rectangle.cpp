@@ -5,7 +5,7 @@ int main() {
 
     scanf("%d", &a);
     
-    if(a < 5) printf("tiny");
+    if(a < 5) printf("%d\ntiny",a*a);
     else printf("%d", a*a);
     
     return 0;
