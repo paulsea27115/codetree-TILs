@@ -16,8 +16,7 @@ int main() {
 
     for(int i = 0; i < 2; i++) cin >> age[i] >> gender[i];
 
-    if(solve(age, gender)) cout << 1;
-    else cout << 0;    
+    cout << (solve(age,gender) ? 1 : 0); 
 
     return 0;
 }
