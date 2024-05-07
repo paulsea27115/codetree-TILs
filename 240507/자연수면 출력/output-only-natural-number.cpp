@@ -18,7 +18,8 @@ int main() {
     int a, b;
     cin >> a >> b;
 
-    cout << solve(a,b);
+    string res = solve(a,b);
+    cout << res;
 
     return 0;
 }
