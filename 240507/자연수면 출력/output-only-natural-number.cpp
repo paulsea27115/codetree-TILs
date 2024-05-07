@@ -1,13 +1,15 @@
 #include <iostream>
-#include <cmath>
+#include <string>
 
 using namespace std;
 
-int solve(int num1, int num2){
+string solve(int num1, int num2){
     if(num1 <= 0) return 0;
-    int res = 0;
+    string res = "";
 
-    for(int i = num1; i < num1 * pow(10, num2); i*=10) res += i;
+    for(int i = 0; i < num2 ; i++){
+        res += to_string(num1);
+    }
 
     return res;
 }
