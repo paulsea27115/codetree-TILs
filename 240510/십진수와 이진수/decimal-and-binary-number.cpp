@@ -3,39 +3,39 @@
 
 using namespace std;
 
+vector<int> action(vector<int> bin1, vector<int> bin2){
+    for(int i = 0; i < bin2.size(); i++) 
+    {
+        bin1[i] = bin1[i] + bin2[i];
+    }
+
+    for(int i = 0; i < bin1.size()-1; i++) 
+    {
+        if(bin1[i] > 1) 
+        {
+            bin1[i] -= 2;
+            bin1[i+1] += 1;
+        }
+    }
+
+    int res_len = bin1.size();
+
+    if(bin1[res_len-1] > 1) 
+    {
+        bin1[res_len-1] -= 2;
+        bin1.push_back(1);
+    }
+    return bin1;
+}
+
 vector<int> sol(vector<int> bin){
     vector<int> res;
 
     res = bin;
 
-    // res.resize(bin.size());
-    
-    // copy(bin.begin(), bin.end(), res.begin());
-
     for(int i = 0; i < 16; i++) 
     {
-
-        for(int i = 0; i < bin.size(); i++) 
-        {
-            res[i] = res[i] + bin[i];
-        }
-
-        for(int i = 0; i < res.size()-1; i++) 
-        {
-            if(res[i] > 1) 
-            {
-                res[i] -= 2;
-                res[i+1] += 1;
-            }
-        }
-
-        int res_len = res.size();
-
-        if(res[res_len-1] > 1) 
-        {
-            res[res_len-1] -= 2;
-            res.push_back(1);
-        }
+        res = action(res, bin);
     }
 
     return res;
