@@ -9,7 +9,7 @@ int main() {
     for(int i = 0; i < Count; i++) {
         cin >> n;
 
-        if(n % 3 == 0) {
+        if(n % 2 == 1 && n % 3 == 0) {
             cout << n << "\n";
         }
     }
