@@ -7,7 +7,7 @@ int main() {
 
     while(true) {
         a /= ++i;
-        if(a == 0) {
+        if(a <= 1) {
             break;
         }
     }
